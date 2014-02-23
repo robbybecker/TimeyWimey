@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 	public static GameState gameState;
 
 	Object[] obstacles;
-	GameObject playerObject, player, obstacle, startPlayer;
+	GameObject playerObject, player, obstacle, startPlayer, upControl, downControl;
 
 	private int obstaclesPast = 0, index = 0, amount = 3;
 
@@ -39,6 +39,10 @@ public class GameManager : MonoBehaviour
 		playerObject = (GameObject)Resources.Load("Player", typeof(GameObject));
 		obstacles = Resources.LoadAll("Obstacle");
 		startPos = this.transform.position;
+
+		upControl = GameObject.FindGameObjectWithTag("Up");
+		downControl = GameObject.FindGameObjectWithTag("Down");
+		DeactivateControls();
 	}
 
 	#if UNITY_ANDROID
@@ -54,6 +58,18 @@ public class GameManager : MonoBehaviour
 	public void IncreaseScore()
 	{
 		obstaclesPast++;
+	}
+
+	private void ActivateControls()
+	{
+		upControl.SetActive(true);
+		downControl.SetActive(true);
+	}
+
+	private void DeactivateControls()
+	{
+		upControl.SetActive(false);
+		downControl.SetActive(false);
 	}
 	
 	public void CreateNew()
@@ -96,7 +112,9 @@ public class GameManager : MonoBehaviour
 
 	public void StartGame()
 	{
-
+#if !UNITY_STANDALONE && !UNITY_EDITOR
+		ActivateControls();
+#endif
 		playerDead = false;
 		HighScore.LoadTheScore();
 		startPlayer.SetActive(false);
@@ -131,8 +149,13 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+
 	public void GameOver()
 	{
+		#if !UNITY_STANDALONE && !UNITY_EDITOR
+		DeactivateControls();
+		#endif
+
 		HighScore.CheckHighScore(obstaclesPast);
 		GameObject[] gos = GameObject.FindGameObjectsWithTag("Obstacle");
 		if(gos.Length > 0)

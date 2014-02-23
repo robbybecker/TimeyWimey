@@ -56,10 +56,13 @@ public class Player : MonoBehaviour
 		explosion = (GameObject)Resources.Load("Explosion", typeof(GameObject));
 		gameManager = GameObject.FindGameObjectWithTag("GameController");
 		bulletTimeGO = GameObject.FindGameObjectWithTag("BulletTime");
-		upSr = GameObject.FindGameObjectWithTag("Up").GetComponent<SpriteRenderer>();
-		downSr = GameObject.FindGameObjectWithTag("Down").GetComponent<SpriteRenderer>();
 		isAlive = true;
 		cam = Camera.main.GetComponent<CameraCode>();
+#if !UNITY_STANDALONE && !UNITY_EDITOR
+		upSr = GameObject.FindGameObjectWithTag("Up").GetComponent<SpriteRenderer>();
+		downSr = GameObject.FindGameObjectWithTag("Down").GetComponent<SpriteRenderer>();
+#endif
+		ControlColorOff();
 	}
 	
 	// Update is called once per frame
@@ -67,7 +70,7 @@ public class Player : MonoBehaviour
 	{
 		if(GameManager.gameState == GameManager.GameState.InGame && isAlive)
 		{
-			#if UNITY_STANDALONE// || UNITY_EDITOR
+			#if UNITY_STANDALONE || UNITY_EDITOR
 			GetPCInput();
 			#else
 			GetTouchInput();
@@ -95,6 +98,7 @@ public class Player : MonoBehaviour
 					cam.DoShake(0.1f, 1.3f);
 					bulletTimeGO.BroadcastMessage("BulletTimeOn");
 					bulletTimeStatus = BulletTimeStatus.On;
+					heldDownTime = true;
 				}
 				if(bulletTimeStatus == BulletTimeStatus.On)
 				{
@@ -207,7 +211,7 @@ public class Player : MonoBehaviour
 	private Vector2 startTouchPos = Vector2.zero;
 
 	private float touchingMag = 0f;
-
+	private bool heldDownTime = false;
 	private void GetTouchInput()
 	{
 		RaycastHit hit;
@@ -343,6 +347,8 @@ public class Player : MonoBehaviour
 
 	private void GetPCInput()
 	{
+
+
 		if(Input.GetMouseButton(0))
 		{
 			inputStatus = InputStatus.On;
@@ -367,14 +373,23 @@ public class Player : MonoBehaviour
 		speed += speedIncrease;
 	}
 
+	void ControlColorOff()
+	{
+#if !UNITY_STANDALONE && !UNITY_EDITOR
+		downSr.color = offColor;
+		upSr.color = offColor;
+#endif
+	}
+
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if(isAlive)
 		{
-			downSr.color = offColor;
-			upSr.color = offColor;
+			ControlColorOff();
 			Time.timeScale = 1f;
+			GameObject.FindGameObjectWithTag("Menu").BroadcastMessage("ShowHint",heldDownTime);
 			gameManager.BroadcastMessage("PlayerDead");
+
 			if(collision.rigidbody)
 				collision.rigidbody.isKinematic = true;
 			isAlive = false;
@@ -411,14 +426,14 @@ public class Player : MonoBehaviour
 			//GUI.DrawTexture(new Rect((Screen.width - 128f)  * 0.1f, (Screen.height - 128f)  * 0.5f, 128f, 128f), circle);
 			//GUI.DrawTexture(new Rect((Screen.width - 32f)  * 0.1f, (Screen.height - 32f)  * 0.5f, 32f, 32f), controlCircle);
 			
-			GUI.Label(new Rect((Screen.width - 100f)  * 1f, (Screen.height - 25f)  * 0.05f, 100f, 25f),""+ touchingMag);
-			GUI.Label(new Rect((Screen.width - 100f)  * 1f, (Screen.height - 25f)  * 0.1f, 100f, 25f),""+ touchString);
+			//GUI.Label(new Rect((Screen.width - 100f)  * 1f, (Screen.height - 25f)  * 0.05f, 100f, 25f),""+ touchingMag);
+			//GUI.Label(new Rect((Screen.width - 100f)  * 1f, (Screen.height - 25f)  * 0.1f, 100f, 25f),""+ touchString);
 
 			float multiplier = (Screen.width  * 0.1f);
 			//Rect rect = new Rect((Screen.width  * 0.005f), (Screen.height  * 0.03f), startBulletTime * multiplier, (Screen.height  * 0.005f));
 			//GUI.HorizontalScrollbar(rect, 0f, (bulletTime - 1f) * multiplier, 0f, (startBulletTime-1f) * multiplier);
 
-			Rect rect = new Rect((Screen.width  * 0.005f), (Screen.height  * 0.03f), maxEnergy * multiplier, (Screen.height  * 0.005f));
+			Rect rect = new Rect((Screen.width  * 0.005f), (Screen.height  * 0.04f), maxEnergy * multiplier, (Screen.height  * 0.005f));
 			GUI.HorizontalScrollbar(rect, 0f, energy * multiplier, 0f, maxEnergy * multiplier);
 		}
 	}

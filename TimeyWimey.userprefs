@@ -1,21 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\..\Ku\kuep1\Assets\Scripts\Steam\StatsAndAchievements.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player.cs" Line="393" Column="41" />
-      <File FileName="Assets\Scripts\Trigger.cs" Line="13" Column="2" />
-      <File FileName="Assets\Scripts\Menu.cs" Line="56" Column="18" />
-      <File FileName="Assets\Scripts\BulletTime.cs" Line="23" Column="4" />
-      <File FileName="Assets\AdvertisementManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\HighScore.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Explosion.cs" Line="16" Column="28" />
-      <File FileName="Assets\Scripts\CameraCode.cs" Line="38" Column="47" />
-      <File FileName="Assets\Scripts\GameManager.cs" Line="106" Column="22" />
-      <File FileName="..\..\..\..\Franknjohn\franknjohn\Assets\Scripts\Systems\CameraCode.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Hit.cs" Line="23" Column="2" />
-      <File FileName="..\..\..\..\Franknjohn\franknjohn\Assets\Scripts\GUI\PauseMenu.cs" Line="493" Column="3" />
-      <File FileName="..\..\..\..\Ku\kuep1\Assets\Scripts\Target.cs" Line="735" Column="10" />
-      <File FileName="..\..\..\..\Ku\kuep1\Assets\Scripts\Hero.cs" Line="1" Column="1" />
+      <File FileName="..\..\..\..\..\Ku\kuep1\Assets\Scripts\Steam\StatsAndAchievements.cs" Line="236" Column="29" />
+      <File FileName="..\..\..\..\..\Ku\kuep1\Assets\Scripts\CropQuestManager.cs" Line="54" Column="35" />
+      <File FileName="..\..\..\..\..\Ku\kuep1\Assets\Scripts\Balloon.cs" Line="233" Column="3" />
+      <File FileName="..\..\..\..\..\Ku\kuep1\Assets\Scripts\BalloonGameManager.cs" Line="69" Column="21" />
+      <File FileName="..\..\..\..\..\Ku\kuep1\Assets\Scripts\Firbolg new scripts\Firbolg.cs" Line="64" Column="21" />
+      <File FileName="..\..\..\..\..\Ku\kuep1\Assets\Scripts\Firbolg new scripts\FirBolgFist.cs" Line="14" Column="42" />
+      <File FileName="..\..\..\..\..\Ku\kuep1\Assets\Scripts\Hero.cs" Line="215" Column="13" />
+      <File FileName="..\..\..\..\..\Ku\kuep1\Assets\Scripts\Interact.cs" Line="36" Column="215" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

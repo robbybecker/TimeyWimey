@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AdvertisementManager : MonoBehaviour {
 
-    Rect rect = new Rect();
+  /*  Rect rect = new Rect();
     void OnGUI()
     {
         rect.x = 20;
@@ -33,7 +33,7 @@ public class AdvertisementManager : MonoBehaviour {
             AdvertisementHandler.ShowAds();
         }
 
-    }
+    }*/
 
     /// <summary>
     /// Admob publisher App Id
@@ -149,6 +149,7 @@ public class AdvertisementManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+#if UNITY_ANDROID
         Debug.Log("Unity Calling Start");
         Debug.Log("Initializing with " + 
             "  Pub ID: " + m_publisherId +
@@ -168,6 +169,7 @@ public class AdvertisementManager : MonoBehaviour {
 
         //Shoot request to enable advertisements
         AdvertisementHandler.EnableAds();
+#endif
 	}
 	
 }

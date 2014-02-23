@@ -1,6 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
+Project("{352C82C7-6AEC-D9B0-659B-7A71E3B216D3}") = "TimeyWimey", "Assembly-CSharp-firstpass.csproj", "{E09BFED5-BC50-C04F-58A8-AE83926094E5}"
+EndProject
 Project("{352C82C7-6AEC-D9B0-659B-7A71E3B216D3}") = "TimeyWimey", "Assembly-CSharp.csproj", "{504A549B-75D0-03AA-D492-9C9667012DC7}"
 EndProject
 Global
@@ -9,6 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E09BFED5-BC50-C04F-58A8-AE83926094E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E09BFED5-BC50-C04F-58A8-AE83926094E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E09BFED5-BC50-C04F-58A8-AE83926094E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E09BFED5-BC50-C04F-58A8-AE83926094E5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{504A549B-75D0-03AA-D492-9C9667012DC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{504A549B-75D0-03AA-D492-9C9667012DC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{504A549B-75D0-03AA-D492-9C9667012DC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -17,7 +23,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																					GlobalSection(MonoDevelopProperties) = preSolution
+																																																		GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
