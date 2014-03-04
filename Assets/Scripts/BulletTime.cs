@@ -19,7 +19,7 @@ public class BulletTime : MonoBehaviour
 			float timeNow = Time.realtimeSinceStartup;
 			float deltaTime = timeNow - lastInterval;
 
-			alpha = 0.25f +  Mathf.PingPong(deltaTime * 3000f, 0.33f);
+			alpha = 0.25f +  Mathf.PingPong(deltaTime * 500f, 0.33f);
 			Color color = new Color(1,1,1, alpha);
 			sr.color = color;
 			lastInterval = timeNow;

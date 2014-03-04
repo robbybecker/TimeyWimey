@@ -84,11 +84,12 @@ public class Menu : MonoBehaviour
 	void OnGUI()
 	{
 		mySkin.label.fontSize = (int)(Screen.height * 0.0334f);
-		mySkin.button.fontSize = (int)(Screen.height * 0.0334f);
+		//mySkin.button.fontSize = (int)(Screen.height * 0.0334f);
+		mySkin.button.fontSize = (int)(Screen.height * 0.075f);
 		
 		GUI.skin = mySkin;
-		float buttonHeight = Screen.height * 0.1f;
-		float buttonWidth = Screen.height * 0.2f;
+		float buttonHeight = Screen.height * 0.15f;
+		float buttonWidth = Screen.height * 0.25f;
 
 		float labelHeight = (Screen.height * 0.05f);
 		float labelWidth = (Screen.height * 0.3f);
@@ -108,7 +109,7 @@ public class Menu : MonoBehaviour
 			}
 			#endif
 
-			if(GUI.Button(new Rect((Screen.width - buttonWidth) * 0.5f, (Screen.height - buttonHeight) * 0.45f, buttonWidth, buttonHeight), "Start"))
+			if(GUI.Button(new Rect((Screen.width - buttonWidth) * 0.5f, (Screen.height - buttonHeight) * 0.5f, buttonWidth, buttonHeight), "Start"))
 			{
 				showInstructions = false;
 				gameManager.BroadcastMessage("StartGame");                           

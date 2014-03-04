@@ -8,9 +8,9 @@ public class AdMobPluginDemoScript : MonoBehaviour {
 		print("Started");
 		AdMobPlugin.CreateBannerView("a15307646f772b1",
                                      AdMobPlugin.AdSize.Banner,
-                                     true);
+                                     false);
         print("Created Banner View");
-        AdMobPlugin.RequestBannerAd(true);
+        AdMobPlugin.RequestBannerAd(false);
         print("Requested Banner Ad");
     }
 

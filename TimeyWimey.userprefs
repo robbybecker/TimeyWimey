@@ -1,15 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\..\Ku\kuep1\Assets\Scripts\Steam\StatsAndAchievements.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Plugins\AdMobPlugin\AdMobPluginDemoScript.cs">
     <Files>
-      <File FileName="..\..\..\..\..\Ku\kuep1\Assets\Scripts\Steam\StatsAndAchievements.cs" Line="236" Column="29" />
-      <File FileName="..\..\..\..\..\Ku\kuep1\Assets\Scripts\CropQuestManager.cs" Line="54" Column="35" />
-      <File FileName="..\..\..\..\..\Ku\kuep1\Assets\Scripts\Balloon.cs" Line="233" Column="3" />
-      <File FileName="..\..\..\..\..\Ku\kuep1\Assets\Scripts\BalloonGameManager.cs" Line="69" Column="21" />
-      <File FileName="..\..\..\..\..\Ku\kuep1\Assets\Scripts\Firbolg new scripts\Firbolg.cs" Line="64" Column="21" />
-      <File FileName="..\..\..\..\..\Ku\kuep1\Assets\Scripts\Firbolg new scripts\FirBolgFist.cs" Line="14" Column="42" />
-      <File FileName="..\..\..\..\..\Ku\kuep1\Assets\Scripts\Hero.cs" Line="215" Column="13" />
-      <File FileName="..\..\..\..\..\Ku\kuep1\Assets\Scripts\Interact.cs" Line="36" Column="215" />
+      <File FileName="Assets\Plugins\AdMobPlugin\AdMobPluginDemoScript.cs" Line="14" Column="38" />
+      <File FileName="Assets\Plugins\AdMobPlugin\AdMobPlugin.cs" Line="56" Column="78" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
